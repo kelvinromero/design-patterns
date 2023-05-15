@@ -5,6 +5,7 @@ import java.io.IOException;
 import grafo.dirigido.Aresta;
 import grafo.dirigido.Grafo;
 import grafo.dirigido.Vertice;
+import iterator.IteratorInterface;
 import model.Aluno;
 
 public class MainGrafo2 {
@@ -76,17 +77,19 @@ public class MainGrafo2 {
 			 g.addAresta("4", "3", 1);
 			 g.addAresta("5", "2", 1);
 			 g.addAresta("5", "1", 1);
-			 g.addAresta("1", "2", 1); 
-		 
-			 g.BFS("6");
-			 g.BFSDistance("5");
-			 
-			 System.out.println();
-			 g.DFS("6");
-			 
-			 		 
-			 g.clear();
-			 System.out.println("Grafo foi esvaziado: " + g);
+			 g.addAresta("1", "2", 1);
+
+			 IteratorInterface it = g.getBFSIterator("6");
+			 System.out.println("BFS:");
+			 while (it.hasNext()) {Van
+				 System.out.println(it.next());
+			 }
+
+			 it = g.getDFSIterator("6");
+			 System.out.println("DFS:");
+			 while (it.hasNext()) {
+				 System.out.println(it.next());
+			 }
 			 			 
 		 } 
 		 

@@ -1,6 +1,10 @@
 package grafo.dirigido;
 
 
+import iterator.BFSIterator;
+import iterator.DFSIterator;
+import iterator.IteratorInterface;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -510,5 +514,12 @@ public class Grafo<T> {
 		return grafo;
 	}
 
+	public IteratorInterface<T> getBFSIterator(T carga) {
+		return new BFSIterator<T>(this.vertices, this.arestas, carga);
+	}
+
+	public IteratorInterface<T> getDFSIterator(T carga) {
+		return new DFSIterator<T>(this.vertices, this.arestas, carga);
+	}
 
 }
