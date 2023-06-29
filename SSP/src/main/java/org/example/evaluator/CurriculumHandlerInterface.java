@@ -5,7 +5,7 @@ import org.example.entities.ResultInterface;
 
 public interface CurriculumHandlerInterface {
 
-    public void evaluate(Curriculum curriculum, ResultInterface result);
+    public void evaluate(Curriculum curriculum);
 
     public void setNext(CurriculumHandlerInterface next);
 }

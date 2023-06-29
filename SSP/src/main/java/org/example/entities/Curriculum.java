@@ -7,7 +7,8 @@ public class Curriculum implements CurriculumInterface {
     private final String name;
     private final String document;
     private final Title title;
-    private final ArrayList<ExperienceInterface> experience;
+    private final ArrayList<ExperienceInterface> experiences;
+    private Result result;
 
     private final int didacticPoints;
 
@@ -15,8 +16,9 @@ public class Curriculum implements CurriculumInterface {
         this.name = name;
         this.document = document;
         this.title = title;
-        this.experience = new ArrayList<>();
+        this.experiences = new ArrayList<>();
         this.didacticPoints = didacticPoints;
+        this.result = new Result();
     }
 
     public String getName() {
@@ -37,11 +39,19 @@ public class Curriculum implements CurriculumInterface {
 
     @Override
     public ArrayList<ExperienceInterface> getExperiences() {
-        return this.experience;
+        return this.experiences;
     }
 
     public void addExperience(ExperienceInterface experience) {
-        this.experience.add(experience);
+        this.experiences.add(experience);
+    }
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
     }
 
     @Override
@@ -50,7 +60,7 @@ public class Curriculum implements CurriculumInterface {
                 "name='" + name + '\'' +
                 ", document='" + document + '\'' +
                 ", title='" + title + '\'' +
-                ", experience=" + experience +
+                ", experience=" + experiences +
                 '}';
     }
 }

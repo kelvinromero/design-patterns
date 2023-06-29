@@ -11,11 +11,11 @@ public abstract class BaseHandlers implements CurriculumHandlerInterface {
         this.next = next;
     }
 
-    public void evaluate(Curriculum curriculum, ResultInterface result) {
+    public void evaluate(Curriculum curriculum) {
         if (this.next == null) {
             return;
         }
 
-        next.evaluate(curriculum, result);
+        next.evaluate(curriculum);
     }
 }

@@ -8,9 +8,9 @@ public class TitleEvaluator extends BaseHandlers {
 
 
     @Override
-    public void evaluate(Curriculum curriculum, ResultInterface result){
-        result.incrementPoints(curriculum.getTitle().getPoints());
+    public void evaluate(Curriculum curriculum){
+        curriculum.getResult().incrementPoints(curriculum.getTitle().getPoints());
 
-        super.evaluate(curriculum, result);
+        super.evaluate(curriculum);
     }
 }

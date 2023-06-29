@@ -6,13 +6,13 @@ import org.example.entities.ResultInterface;
 public class DidaticsEvaluator extends BaseHandlers {
 
     @Override
-    public void evaluate(Curriculum curriculum, ResultInterface result){
+    public void evaluate(Curriculum curriculum){
         if(curriculum.getDidacticPoints() < 70) {
             return;
         }
 
-        result.incrementPoints(curriculum.getDidacticPoints());
+        curriculum.getResult().incrementPoints(curriculum.getDidacticPoints());
 
-        super.evaluate(curriculum, result);
+        super.evaluate(curriculum);
     }
 }
