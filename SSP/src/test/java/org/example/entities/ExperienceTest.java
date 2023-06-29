@@ -10,19 +10,19 @@ class ExperienceTest {
 
     @Test
     void getDescription() {
-        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT, "description", 1);
+        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, "description", 1);
         assertEquals("description", experience.getDescription());
     }
 
     @Test
     void getExperienceType() {
-        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT, "description", 1);
-        assertEquals(ExperienceType.ACADEMIC_MANAGEMENT, experience.getExperienceType());
+        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, "description", 1);
+        assertEquals(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, experience.getExperienceType());
     }
 
     @Test
     void getSemestersOfExperience() {
-        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT, "description", 1);
+        Experience experience = new Experience(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, "description", 1);
         assertEquals(1, experience.getSemestersOfExperience());
     }
 }
