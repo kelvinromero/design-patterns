@@ -1,11 +1,9 @@
 package org.example.evaluator;
 
-import org.example.entities.Curriculum;
 import org.example.entities.CurriculumInterface;
 import org.example.entities.ExperienceInterface;
-import org.example.entities.ResultInterface;
 
-public class ExperienceEvaluator extends BaseHandlers {
+public class ExperienceEvaluator extends BaseHandler {
 
     @Override
     public void evaluate(CurriculumInterface curriculum) {

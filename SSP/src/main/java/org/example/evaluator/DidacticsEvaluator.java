@@ -1,10 +1,8 @@
 package org.example.evaluator;
 
-import org.example.entities.Curriculum;
 import org.example.entities.CurriculumInterface;
-import org.example.entities.ResultInterface;
 
-public class DidaticsEvaluator extends BaseHandlers {
+public class DidacticsEvaluator extends BaseHandler {
 
     @Override
     public void evaluate(CurriculumInterface curriculum){

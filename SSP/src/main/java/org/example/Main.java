@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.entities.*;
-import org.example.evaluator.DidaticsEvaluator;
+import org.example.evaluator.DidacticsEvaluator;
 import org.example.evaluator.ExperienceEvaluator;
 import org.example.evaluator.TitleEvaluator;
 import org.example.ssp.Ssp;
@@ -31,14 +31,14 @@ public class Main {
 
         List<CurriculumInterface> curriculums = Arrays.asList(curriculum, curriculum2, curriculum3, curriculum4);
 
-        DidaticsEvaluator didaticsEvaluator = new DidaticsEvaluator();
+        DidacticsEvaluator didacticsEvaluator = new DidacticsEvaluator();
         TitleEvaluator titleEvaluator = new TitleEvaluator();
         ExperienceEvaluator experienceEvaluator = new ExperienceEvaluator();
 
-        didaticsEvaluator.setNext(titleEvaluator);
+        didacticsEvaluator.setNext(titleEvaluator);
         titleEvaluator.setNext(experienceEvaluator);
 
-        Ssp ssp = new Ssp(didaticsEvaluator);
+        Ssp ssp = new Ssp(didacticsEvaluator);
 
         curriculums = ssp.getPssResult(curriculums);
 

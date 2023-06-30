@@ -1,10 +1,8 @@
 package org.example.evaluator;
 
-import org.example.entities.Curriculum;
 import org.example.entities.CurriculumInterface;
-import org.example.entities.ResultInterface;
 
-public abstract class BaseHandlers implements CurriculumHandlerInterface {
+public abstract class BaseHandler implements CurriculumHandlerInterface {
 
     private CurriculumHandlerInterface next;
 

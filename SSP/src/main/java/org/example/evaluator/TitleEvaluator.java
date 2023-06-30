@@ -1,11 +1,8 @@
 package org.example.evaluator;
 
-import org.example.entities.Curriculum;
 import org.example.entities.CurriculumInterface;
-import org.example.entities.ResultInterface;
-import org.example.entities.Title;
 
-public class TitleEvaluator extends BaseHandlers {
+public class TitleEvaluator extends BaseHandler {
 
 
     @Override
