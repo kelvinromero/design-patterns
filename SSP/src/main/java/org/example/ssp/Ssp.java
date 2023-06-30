@@ -6,13 +6,16 @@ import org.example.evaluator.CurriculumHandlerInterface;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Ssp {
 
     private CurriculumHandlerInterface chain;
+    private int vacancies;
 
-    public Ssp(CurriculumHandlerInterface chain) {
+    public Ssp(CurriculumHandlerInterface chain, int vacancies) {
         this.chain = chain;
+        this.vacancies = vacancies;
     }
 
     public List<CurriculumInterface> getPssResult(List<CurriculumInterface> curriculums) {
@@ -30,4 +33,7 @@ public class Ssp {
         return curriculums;
     }
 
+    public List<CurriculumInterface> getClassifieds(List<CurriculumInterface> resultCurriculums) {
+        return resultCurriculums.stream().limit(vacancies).collect(Collectors.toList());
+    }
 }

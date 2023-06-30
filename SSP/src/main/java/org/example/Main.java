@@ -38,11 +38,19 @@ public class Main {
         didacticsEvaluator.setNext(titleEvaluator);
         titleEvaluator.setNext(experienceEvaluator);
 
-        Ssp ssp = new Ssp(didacticsEvaluator);
+        Ssp ssp = new Ssp(didacticsEvaluator, 2);
 
         curriculums = ssp.getPssResult(curriculums);
 
+        System.out.println("Resultado final");
         for(CurriculumInterface cv : curriculums) {
+            System.out.println(cv);
+        }
+        System.out.println();
+        System.out.println("==============================");
+        System.out.println();
+        System.out.println("Classificados");
+        for(CurriculumInterface cv : ssp.getClassifieds(curriculums)) {
             System.out.println(cv);
         }
     }
