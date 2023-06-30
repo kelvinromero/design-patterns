@@ -7,11 +7,11 @@ public class ExperienceEvaluator extends BaseHandler {
 
     @Override
     public void evaluate(CurriculumInterface curriculum) {
-        this.calculateTeachingExperience(curriculum);
+        this.calculateExperiencePoints(curriculum);
         super.evaluate(curriculum);
     }
 
-    private void calculateTeachingExperience(CurriculumInterface curriculum) {
+    private void calculateExperiencePoints(CurriculumInterface curriculum) {
         int temp;
         for (ExperienceInterface experience : curriculum.getExperiences()) {
             temp = experience.getSemestersOfExperience() * experience.getExperienceType().getPoints();
