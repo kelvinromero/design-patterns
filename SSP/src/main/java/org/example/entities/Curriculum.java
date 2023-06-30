@@ -59,8 +59,10 @@ public class Curriculum implements CurriculumInterface {
         return "Curriculum{" +
                 "name='" + name + '\'' +
                 ", document='" + document + '\'' +
-                ", title='" + title + '\'' +
-                ", experience=" + experiences +
+                ", title=" + title +
+                ", experiences=" + experiences +
+                ", didacticPoints=" + didacticPoints +
+                ", result=" + result +
                 '}';
     }
 }
