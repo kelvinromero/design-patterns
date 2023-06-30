@@ -1,12 +1,13 @@
 package org.example.evaluator;
 
 import org.example.entities.Curriculum;
+import org.example.entities.CurriculumInterface;
 import org.example.entities.ResultInterface;
 
 public class DidaticsEvaluator extends BaseHandlers {
 
     @Override
-    public void evaluate(Curriculum curriculum){
+    public void evaluate(CurriculumInterface curriculum){
         if(curriculum.getDidacticPoints() < 70) {
             return;
         }
