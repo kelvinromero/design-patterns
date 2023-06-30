@@ -1,7 +1,10 @@
 package org.example.evaluator;
 
 import org.example.entities.CurriculumInterface;
-import org.example.entities.ExperienceInterface;
+import org.example.entities.ExperienceType;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExperienceEvaluator extends BaseHandler {
 
@@ -12,13 +15,24 @@ public class ExperienceEvaluator extends BaseHandler {
     }
 
     private void calculateExperiencePoints(CurriculumInterface curriculum) {
-        int temp;
-        for (ExperienceInterface experience : curriculum.getExperiences()) {
-            temp = experience.getSemestersOfExperience() * experience.getExperienceType().getPoints();
-            curriculum.getResult().incrementPoints(
-                    Math.min(temp, experience.getExperienceType().getMaxPoints())
-            );
+        List<ExperienceType> experienceTypes = curriculum.getExperiences().stream()
+                .map(exp -> exp.getExperienceType())
+                .distinct()
+                .collect(Collectors.toList());
+
+
+        for (ExperienceType experienceType : experienceTypes) {
+            int totalPoints = curriculum.getExperiences().stream()
+                    .filter(exp -> exp.getExperienceType() == experienceType)
+                    .mapToInt(exp -> exp.getSemestersOfExperience() * experienceType.getPoints())
+                    .reduce(0, Integer::sum);
+
+            int maxPoints = experienceType.getMaxPoints();
+            int pointsToAdd = Math.min(totalPoints, maxPoints);
+
+            curriculum.getResult().incrementPoints(pointsToAdd);
         }
+
     }
 
 }

@@ -13,7 +13,9 @@ public class Main {
     public static void main(String[] args) {
         Curriculum curriculum = new Curriculum("John Doe", "123456789", Title.DOCTORATE, 70);
         curriculum.addExperience(new Experience(ExperienceType.TEACHING_FEDERAL_INSTITUTE, "Teaching at University of London", 10));
+        curriculum.addExperience(new Experience(ExperienceType.TEACHING_FEDERAL_INSTITUTE, "Teaching at University of Cambridge", 5));
         curriculum.addExperience(new Experience(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, "Coordinator", 5));
+        curriculum.addExperience(new Experience(ExperienceType.ACADEMIC_MANAGEMENT_COORDINATOR, "Coordinator", 10));
 
         Curriculum curriculum2 = new Curriculum("Maria Doe", "223456789", Title.MASTER, 80);
         curriculum2.addExperience(new Experience(ExperienceType.TEACHING_FEDERAL_INSTITUTE, "Teaching at University of London", 10));
